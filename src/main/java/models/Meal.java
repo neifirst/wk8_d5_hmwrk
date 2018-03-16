@@ -72,24 +72,6 @@ public class Meal {
         foods.add(food);
     }
 
-
-
-    public void getCalculateIngred() {
-        for (Food key : ingreds.keySet()) {
-           double calResult = key.getCalories() * (ingreds.get(key) / 100);
-           double carbResult = key.getCalories() * (ingreds.get(key) / 100);
-           double fatResult = key.getCalories() * (ingreds.get(key) / 100);
-           double proteinResult = key.getCalories() * (ingreds.get(key) / 100);
-           double fibreResult = key.getCalories() * (ingreds.get(key) / 100);
-
-           calTotal += calResult;
-           carbsTotal += carbResult;
-           fatTotal += fatResult;
-           proteinTotal += proteinResult;
-           fibreTotal += fibreResult;
-        }
-    }
-
     public int getIngredCount() {
         return ingreds.size();
     }
@@ -97,4 +79,27 @@ public class Meal {
     public void addIngred(Food food, double grams) {
         ingreds.put(food, grams);
     }
+
+
+
+    public void getCalculateIngred() {
+        for (Food key : ingreds.keySet()) {
+           double calResult = key.getCalories() * (ingreds.get(key) / 100);
+           double carbResult = key.getCarbs() * (ingreds.get(key) / 100);
+           double fatResult = key.getFat() * (ingreds.get(key) / 100);
+           double proteinResult = key.getProtein() * (ingreds.get(key) / 100);
+           double fibreResult = key.getFibre() * (ingreds.get(key) / 100);
+
+           calTotal += calResult;
+           carbsTotal += carbResult;
+           fatTotal += fatResult;
+           proteinTotal += proteinResult;
+           fibreTotal += fibreResult;
+
+           Food food = new Food(key.getName(), calResult, carbResult, fatResult, proteinResult, fibreResult);
+           this.addFood(food);
+        }
+    }
+
+
 }
