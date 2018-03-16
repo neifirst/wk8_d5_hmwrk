@@ -62,8 +62,8 @@ public class User {
 
     }
 
-    public void setMonAmounts(MacroType key, Double amount) {
-        monAmounts.put(MacroType.CAL, amount);
+    public void setMonAmounts(MacroType macro, Double amount) {
+        monAmounts.put(macro, amount);
     }
 
     public Map<MacroType, Double> getMonAmounts() {
@@ -77,5 +77,13 @@ public class User {
 
     public void setSavedMeals(List<Meal> savedMeals) {
         this.savedMeals = savedMeals;
+    }
+
+    public void addMeal(Meal meal) {
+        savedMeals.add(meal);
+    }
+
+    public int mealCount() {
+        return savedMeals.size();
     }
 }

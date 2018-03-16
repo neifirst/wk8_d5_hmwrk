@@ -73,6 +73,9 @@ public class UserTest {
         assertEquals(1600.0, result, 0.01);
     }
 
-
-
+    @Test
+    public void canAddMeal() {
+        user.addMeal(meal);
+        assertEquals(1, user.mealCount());
+    }
 }

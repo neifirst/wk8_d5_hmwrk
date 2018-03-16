@@ -46,7 +46,7 @@ public class MealTest {
 //    }
 
     @Test
-    public void canAddIngredient() {
+    public void canAddIngredientAndCalculate() {
         meal.addIngred(food4, 75.0);
         assertEquals(4, meal.getIngredCount());
     }
