@@ -1,14 +1,12 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Meal {
 
     private int id;
     private String name;
+    private Date date;
     private Map<Food, Double> ingreds;
     private List<Food> foods;
     private double calTotal;
@@ -20,9 +18,10 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(String name, Map<Food, Double> ingreds, List<Food> foods) {
+    public Meal(String name, Date date, Map<Food, Double> ingreds, List<Food> foods) {
         this.id = id;
         this.name = name;
+        this.date = new Date();
         this.ingreds = ingreds;
         this.foods = foods;
         this.calTotal = 0;
@@ -46,6 +45,14 @@ public class Meal {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public List<Food> getFoods() {
@@ -82,7 +89,7 @@ public class Meal {
 
 
 
-    public void getCalculateIngred() {
+    public void getCalculatedIngred() {
         for (Food key : ingreds.keySet()) {
            double calResult = key.getCalories() * (ingreds.get(key) / 100);
            double carbResult = key.getCarbs() * (ingreds.get(key) / 100);
@@ -101,5 +108,43 @@ public class Meal {
         }
     }
 
+    public double getCalTotal() {
+        return calTotal;
+    }
 
+    public void setCalTotal(double calTotal) {
+        this.calTotal = calTotal;
+    }
+
+    public double getCarbsTotal() {
+        return carbsTotal;
+    }
+
+    public void setCarbsTotal(double carbsTotal) {
+        this.carbsTotal = carbsTotal;
+    }
+
+    public double getFatTotal() {
+        return fatTotal;
+    }
+
+    public void setFatTotal(double fatTotal) {
+        this.fatTotal = fatTotal;
+    }
+
+    public double getProteinTotal() {
+        return proteinTotal;
+    }
+
+    public void setProteinTotal(double proteinTotal) {
+        this.proteinTotal = proteinTotal;
+    }
+
+    public double getFibreTotal() {
+        return fibreTotal;
+    }
+
+    public void setFibreTotal(double fibreTotal) {
+        this.fibreTotal = fibreTotal;
+    }
 }
