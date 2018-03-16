@@ -6,8 +6,11 @@ import models.Food;
 import models.Meal;
 import models.User;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class UserTest {
 
@@ -35,8 +38,8 @@ public class UserTest {
         food3 = new Food("Double cream", 467, 1.6, 50.5, 1.5, 0);
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
 
-        foods = new ArrayList<Food>();
-        ingreds = new HashMap<Food, Double>();
+        foods = new ArrayList<>();
+        ingreds = new HashMap<>();
 
         ingreds.put(food1, 140.0);
         ingreds.put(food2, 15.0);
@@ -44,10 +47,10 @@ public class UserTest {
 
         meal = new Meal("Scrambled Eggs", date, ingreds, foods);
 
-        savedMeals = new ArrayList<Meal>();
+        savedMeals = new ArrayList<>();
 
-        goals = new HashMap<DayType, Map<MacroType, Double>>();
-        monAmounts = new HashMap<MacroType, Double>();
+        goals = new HashMap<>();
+        monAmounts = new HashMap<>();
 
         monAmounts.put(MacroType.CAL, 1500.0);
         monAmounts.put(MacroType.CARBS, 15.0);
@@ -58,5 +61,18 @@ public class UserTest {
         goals.put(DayType.MONDAY, monAmounts);
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
+
     }
+
+
+    @Test
+    public void canUpdateAGoal() {
+        user.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
+        Map<MacroType, Double> map = goals.get(DayType.MONDAY);
+        Double result = map.get(MacroType.CAL);
+        assertEquals(1600.0, result, 0.01);
+    }
+
+
+
 }

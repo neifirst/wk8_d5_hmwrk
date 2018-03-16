@@ -3,6 +3,7 @@ package models;
 import enums.DayType;
 import enums.MacroType;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +13,7 @@ public class User {
     private String name;
     private String userName;
     private Map<DayType, Map<MacroType, Double>> goals;
-    private Map<MacroType, Double> amounts;
+    private Map<MacroType, Double> monAmounts;
     private List<Meal> savedMeals;
 
     public User() {
@@ -23,7 +24,7 @@ public class User {
         this.name = name;
         this.userName = userName;
         this.goals = goals;
-        this.amounts = amounts;
+        this.monAmounts = new HashMap<MacroType, Double>();
         this.savedMeals = savedMeals;
     }
 
@@ -55,17 +56,20 @@ public class User {
         return goals;
     }
 
-    public void setGoals(Map<DayType, Map<MacroType, Double>> goals) {
-        this.goals = goals;
+    public void setGoals(DayType day, MacroType macro, Double amount) {
+        Map<MacroType, Double> map = goals.get(day);
+        map.put(macro, amount);
+
     }
 
-    public Map<MacroType, Double> getAmounts() {
-        return amounts;
+    public void setMonAmounts(MacroType key, Double amount) {
+        monAmounts.put(MacroType.CAL, amount);
     }
 
-    public void setAmounts(Map<MacroType, Double> amounts) {
-        this.amounts = amounts;
+    public Map<MacroType, Double> getMonAmounts() {
+        return monAmounts;
     }
+
 
     public List<Meal> getSavedMeals() {
         return savedMeals;
