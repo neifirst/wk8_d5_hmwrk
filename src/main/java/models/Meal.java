@@ -1,31 +1,35 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Meal {
 
     private int id;
     private String name;
+    private Map<Food, Double> ingreds;
     private List<Food> foods;
-    private double calories;
-    private double carbs;
-    private double fat;
-    private double protein;
-    private double fibre;
+    private double calTotal;
+    private double carbsTotal;
+    private double fatTotal;
+    private double proteinTotal;
+    private double fibreTotal;
 
     public Meal() {
     }
 
-    public Meal(String name, List<Food> foods) {
+    public Meal(String name, Map<Food, Double> ingreds, List<Food> foods) {
         this.id = id;
         this.name = name;
+        this.ingreds = ingreds;
         this.foods = foods;
-        this.calories = calories;
-        this.carbs = carbs;
-        this.fat = fat;
-        this.protein = protein;
-        this.fibre = fibre;
+        this.calTotal = 0;
+        this.carbsTotal = 0;
+        this.fatTotal = 0;
+        this.proteinTotal = 0;
+        this.fibreTotal = 0;
     }
 
     public int getId() {
@@ -52,6 +56,14 @@ public class Meal {
         this.foods = foods;
     }
 
+    public Map<Food, Double> getIngreds() {
+        return ingreds;
+    }
+
+    public void setIngreds(Map<Food, Double> ingreds) {
+        this.ingreds = ingreds;
+    }
+
     public int getFoodsCount() {
         return foods.size();
     }
@@ -60,45 +72,29 @@ public class Meal {
         foods.add(food);
     }
 
-    public double getCalories() {
-        return calories;
+
+
+    public void getCalculateIngred() {
+        for (Food key : ingreds.keySet()) {
+           double calResult = key.getCalories() * (ingreds.get(key) / 100);
+           double carbResult = key.getCalories() * (ingreds.get(key) / 100);
+           double fatResult = key.getCalories() * (ingreds.get(key) / 100);
+           double proteinResult = key.getCalories() * (ingreds.get(key) / 100);
+           double fibreResult = key.getCalories() * (ingreds.get(key) / 100);
+
+           calTotal += calResult;
+           carbsTotal += carbResult;
+           fatTotal += fatResult;
+           proteinTotal += proteinResult;
+           fibreTotal += fibreResult;
+        }
     }
 
-    public void setCalories(double calories) {
-        this.calories = calories;
+    public int getIngredCount() {
+        return ingreds.size();
     }
 
-    public double getCarbs() {
-        return carbs;
+    public void addIngred(Food food, double grams) {
+        ingreds.put(food, grams);
     }
-
-    public void setCarbs(double carbs) {
-        this.carbs = carbs;
-    }
-
-    public double getFat() {
-        return fat;
-    }
-
-    public void setFat(double fat) {
-        this.fat = fat;
-    }
-
-    public double getProtein() {
-        return protein;
-    }
-
-    public void setProtein(double protein) {
-        this.protein = protein;
-    }
-
-    public double getFibre() {
-        return fibre;
-    }
-
-    public void setFibre(double fibre) {
-        this.fibre = fibre;
-    }
-
-
 }
