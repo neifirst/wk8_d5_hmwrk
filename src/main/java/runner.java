@@ -13,6 +13,7 @@ public class runner {
     public static void main(String[] args) {
 
         Date date = new Date();
+        DBHelper.save(date);
 
         Food food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         DBHelper.save(food1);
@@ -25,6 +26,9 @@ public class runner {
         Food food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
         DBHelper.save(food5);
 
+
+
+
         List<Food> constituents = new ArrayList<>();
         Map<Food, Double> ingreds = new HashMap<>();
 
@@ -32,9 +36,10 @@ public class runner {
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
-
-
         List<Meal> savedMeals = new ArrayList<>();
+
+
+
 
         Map<DayType, Map<MacroType, Double>> goals = new HashMap<>();
         Map<MacroType, Double> monAmounts = new HashMap<>();
@@ -46,6 +51,9 @@ public class runner {
         monAmounts.put(MacroType.FIBRE, 5.0);
 
         goals.put(DayType.MONDAY, monAmounts);
+
+
+
 
 
         User user1 = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);

@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum DayType {
 
     MONDAY,
