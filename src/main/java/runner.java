@@ -13,7 +13,6 @@ public class runner {
     public static void main(String[] args) {
 
         Date date = new Date();
-        DBHelper.save(date);
 
         Food food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         DBHelper.save(food1);
@@ -55,7 +54,6 @@ public class runner {
 
 
 
-
         User user1 = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
         DBHelper.save(user1);
 
@@ -66,6 +64,10 @@ public class runner {
         user1.addMeal(meal1);
         user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
 
+
+
         List<Food> allFoods = DBHelper.getAll(Food.class);
+        List<Meal> allMeals = DBHelper.getAll(Meal.class);
+        List<User> allUsers = DBHelper.getAll(User.class);
     }
 }

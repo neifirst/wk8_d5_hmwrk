@@ -1,4 +1,4 @@
-package javatests;
+package dbtests;
 
 import db.DBHelper;
 import enums.DayType;
@@ -13,16 +13,16 @@ import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class UserTest {
+public class MealTestDb {
 
-    User user;
-    Meal meal;
-    Date date;
-    Food food1;
-    Food food2;
-    Food food3;
-    Food food4;
-    Food food5;
+    private Food food1;
+    private Food food2;
+    private Food food3;
+    private Food food4;
+    private Food food5;
+    private Meal meal;
+    private User user;
+    private Date date;
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
@@ -33,14 +33,18 @@ public class UserTest {
     @Before
     public void setUp() throws Exception {
 
-
         date = new Date();
 
         food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
+        DBHelper.save(food1);
         food2 = new Food("Mayonnaise", 720, 1.3, 79, 1.1, 0);
+        DBHelper.save(food2);
         food3 = new Food("Double cream", 467, 1.6, 50.5, 1.5, 0);
+        DBHelper.save(food3);
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
+        DBHelper.save(food4);
         food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
+        DBHelper.save(food5);
 
         constituents = new ArrayList<>();
         ingreds = new HashMap<>();
@@ -49,9 +53,8 @@ public class UserTest {
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
-        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
-
         savedMeals = new ArrayList<>();
+
 
         goals = new HashMap<>();
         monAmounts = new HashMap<>();
@@ -64,22 +67,30 @@ public class UserTest {
 
         goals.put(DayType.MONDAY, monAmounts);
 
+
+
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
+        DBHelper.save(user);
+
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
+        DBHelper.save(meal);
 
     }
 
 
     @Test
-    public void canUpdateAGoal() {
-        user.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
-        Map<MacroType, Double> map = goals.get(DayType.MONDAY);
-        Double result = map.get(MacroType.CAL);
-        assertEquals(1600.0, result, 0.01);
+    public void canSave() {
+        List<Meal> results = DBHelper.getAll(Meal.class);
+        assertEquals(1, results.size());
     }
 
     @Test
-    public void canAddMeal() {
-        user.addMeal(meal);
-        assertEquals(1, user.mealCount());
+    public void canUpdate() {
+        Meal found = DBHelper.find(Meal.class, meal.getId());
+        found.setName("Scrambled Eggies");
+        DBHelper.save(found);
+        found = DBHelper.find(Meal.class, meal.getId());
+        assertEquals("Scrambled Eggies", found.getName());
     }
+
 }
