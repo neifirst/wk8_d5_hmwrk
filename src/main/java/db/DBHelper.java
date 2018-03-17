@@ -1,5 +1,8 @@
 package db;
 
+import models.Food;
+import models.Meal;
+import models.User;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -85,6 +88,16 @@ public class DBHelper {
         Criteria cr = session.createCriteria(classType);
         cr.add(Restrictions.eq("id", id));
         result = getUnique(cr);
+        return result;
+    }
+
+    public static List<Meal> getMealsByUser(User user) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Meal> result = null;
+        Criteria cr = session.createCriteria(Meal.class);
+        cr.add(Restrictions.eq("user", user));
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        result = getList(cr);
         return result;
     }
 

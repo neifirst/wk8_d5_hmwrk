@@ -116,4 +116,12 @@ public class Food {
 
         return newFood;
     }
+
+    public int mealsCount() {
+        return meals.size();
+    }
+
+    public void addMeal(Meal meal) {
+        meals.add(meal);
+    }
 }

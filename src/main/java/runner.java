@@ -5,6 +5,7 @@ import models.Food;
 import models.Meal;
 import models.User;
 
+import java.security.acl.Owner;
 import java.util.*;
 
 public class runner {
@@ -60,14 +61,23 @@ public class runner {
         Meal meal1 = new Meal("Scrambled Eggs", user1, date, ingreds, constituents);
         DBHelper.save(meal1);
 
+
+
+
         meal1.getCalculatedIngred();
         user1.addMeal(meal1);
         user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
 
 
-
         List<Food> allFoods = DBHelper.getAll(Food.class);
         List<Meal> allMeals = DBHelper.getAll(Meal.class);
         List<User> allUsers = DBHelper.getAll(User.class);
+
+        Food foundFoodById = DBHelper.find(Food.class, food2.getId());
+        Meal foundFolderById = DBHelper.find(Meal.class, meal1.getId());
+        User foundOwnerById = DBHelper.find(User.class, user1.getId());
+
+//        List<Food> foundFoodsByMeal = DBHelper.getFoodsByMeal(meal1);
+        List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
     }
 }
