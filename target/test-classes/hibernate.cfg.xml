@@ -12,11 +12,9 @@
         <property name="hbm2ddl.auto">create-drop</property>
         <property name="show_sql">true</property>
 
-        <!--<mapping class = "models.Instrument"/>-->
-        <!--<mapping class = "models.StockItem"/>-->
-        <!--<mapping class = "models.Guitar"/>-->
-        <!--<mapping class = "models.Piano"/>-->
-        <!--<mapping class = "models.MusicStand"/>-->
-        <!--<mapping class = "models.MusicBook"/>-->
+        <mapping class = "models.User"/>
+        <mapping class = "models.Meal"/>
+        <mapping class = "models.Food"/>
     </session-factory>
 </hibernate-configuration>
+

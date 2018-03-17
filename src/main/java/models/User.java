@@ -3,10 +3,13 @@ package models;
 import enums.DayType;
 import enums.MacroType;
 
+import javax.persistence.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Entity
+@Table(name="users")
 public class User {
 
     private int id;
@@ -28,6 +31,9 @@ public class User {
         this.savedMeals = savedMeals;
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -36,6 +42,7 @@ public class User {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -44,6 +51,7 @@ public class User {
         this.name = name;
     }
 
+    @Column(name="user_name")
     public String getUserName() {
         return userName;
     }
@@ -70,7 +78,7 @@ public class User {
         return monAmounts;
     }
 
-
+    @OneToMany(mappedBy="user",fetch= FetchType.EAGER)
     public List<Meal> getSavedMeals() {
         return savedMeals;
     }

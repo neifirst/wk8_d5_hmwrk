@@ -1,7 +1,10 @@
 package javatests;
 
+import enums.DayType;
+import enums.MacroType;
 import models.Food;
 import models.Meal;
+import models.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class MealTest {
 
     Meal meal;
+    User user;
     Date date;
     Food food1;
     Food food2;
@@ -19,11 +23,15 @@ public class MealTest {
     Food food4;
     List<Food> foods;
     Map<Food, Double> ingreds;
+    Map<DayType, Map<MacroType, Double>> goals;
+    Map<MacroType, Double> monAmounts;
+    List<Meal> savedMeals;
 
     @Before
     public void setUp() throws Exception {
 
         date = new Date();
+
 
         food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         food2 = new Food("Mayonnaise", 720, 1.3, 79, 1.1, 0);
@@ -37,7 +45,15 @@ public class MealTest {
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
-        meal = new Meal("Scrambled Eggs", date, ingreds, foods);
+        savedMeals = new ArrayList<>();
+
+        goals = new HashMap<>();
+        monAmounts = new HashMap<>();
+
+        user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
+
+
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, foods);
     }
 
 //    @Test

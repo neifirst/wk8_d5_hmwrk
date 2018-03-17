@@ -1,11 +1,15 @@
 package models;
 
+import javax.persistence.*;
 import java.util.*;
 
+@Entity
+@Table(name="meals")
 public class Meal {
 
     private int id;
     private String name;
+    private User user;
     private Date date;
     private Map<Food, Double> ingreds;
     private List<Food> foods;
@@ -18,9 +22,10 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(String name, Date date, Map<Food, Double> ingreds, List<Food> foods) {
+    public Meal(String name, User user, Date date, Map<Food, Double> ingreds, List<Food> foods) {
         this.id = id;
         this.name = name;
+        this.user = user;
         this.date = new Date();
         this.ingreds = ingreds;
         this.foods = foods;
@@ -31,6 +36,9 @@ public class Meal {
         this.fibreTotal = 0;
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -39,6 +47,7 @@ public class Meal {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -47,6 +56,17 @@ public class Meal {
         this.name = name;
     }
 
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Column(name="date")
     public Date getDate() {
         return date;
     }
@@ -55,6 +75,10 @@ public class Meal {
         this.date = date;
     }
 
+    @ManyToMany
+    @JoinTable(name = "meal_food",
+            joinColumns = {@JoinColumn(name = "meal_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "food_id", nullable = false, updatable = false)})
     public List<Food> getFoods() {
         return foods;
     }
@@ -63,6 +87,7 @@ public class Meal {
         this.foods = foods;
     }
 
+    @Column(name="ingreds")
     public Map<Food, Double> getIngreds() {
         return ingreds;
     }
@@ -108,6 +133,7 @@ public class Meal {
         }
     }
 
+    @Column(name="cal")
     public double getCalTotal() {
         return calTotal;
     }
@@ -116,6 +142,7 @@ public class Meal {
         this.calTotal = calTotal;
     }
 
+    @Column(name="carbs")
     public double getCarbsTotal() {
         return carbsTotal;
     }
@@ -124,6 +151,7 @@ public class Meal {
         this.carbsTotal = carbsTotal;
     }
 
+    @Column(name="fat")
     public double getFatTotal() {
         return fatTotal;
     }
@@ -132,6 +160,7 @@ public class Meal {
         this.fatTotal = fatTotal;
     }
 
+    @Column(name="protein")
     public double getProteinTotal() {
         return proteinTotal;
     }
@@ -140,6 +169,7 @@ public class Meal {
         this.proteinTotal = proteinTotal;
     }
 
+    @Column(name="fibre")
     public double getFibreTotal() {
         return fibreTotal;
     }

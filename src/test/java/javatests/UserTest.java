@@ -21,6 +21,7 @@ public class UserTest {
     Food food2;
     Food food3;
     Food food4;
+    Food food5;
     List<Food> foods;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
@@ -37,6 +38,7 @@ public class UserTest {
         food2 = new Food("Mayonnaise", 720, 1.3, 79, 1.1, 0);
         food3 = new Food("Double cream", 467, 1.6, 50.5, 1.5, 0);
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
+        food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
 
         foods = new ArrayList<>();
         ingreds = new HashMap<>();
@@ -45,7 +47,7 @@ public class UserTest {
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
-        meal = new Meal("Scrambled Eggs", date, ingreds, foods);
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, foods);
 
         savedMeals = new ArrayList<>();
 

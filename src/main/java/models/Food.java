@@ -1,5 +1,11 @@
 package models;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name="meals")
 public class Food {
 
     private int id;
@@ -9,6 +15,7 @@ public class Food {
     private double carbs;
     private double protein;
     private double fibre;
+    private List<Meal> meals;
 
     public Food() {
     }
@@ -21,8 +28,12 @@ public class Food {
         this.carbs = carbs;
         this.protein = protein;
         this.fibre = fibre;
+        this.meals = new ArrayList<>();
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,6 +42,7 @@ public class Food {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -39,6 +51,7 @@ public class Food {
         this.name = name;
     }
 
+    @Column(name="cal")
     public double getCalories() {
         return calories;
     }
@@ -47,6 +60,7 @@ public class Food {
         this.calories = calories;
     }
 
+    @Column(name="fat")
     public double getFat() {
         return fat;
     }
@@ -55,6 +69,7 @@ public class Food {
         this.fat = fat;
     }
 
+    @Column(name="carbs")
     public double getCarbs() {
         return carbs;
     }
@@ -63,6 +78,7 @@ public class Food {
         this.carbs = carbs;
     }
 
+    @Column(name="protein")
     public double getProtein() {
         return protein;
     }
@@ -71,12 +87,22 @@ public class Food {
         this.protein = protein;
     }
 
+    @Column(name="fibre")
     public double getFibre() {
         return fibre;
     }
 
     public void setFibre(double fibre) {
         this.fibre = fibre;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "foods")
+    public List<Meal> getMeals() {
+        return meals;
+    }
+
+    public void setMeals(List<Meal> meals) {
+        this.meals = meals;
     }
 
     public Food getValuesForAmount(double grams) {
