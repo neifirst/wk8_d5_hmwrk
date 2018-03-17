@@ -4,6 +4,7 @@ import enums.DayType;
 import enums.MacroType;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -95,5 +96,32 @@ public class User {
 
     public int mealCount() {
         return savedMeals.size();
+    }
+
+
+    public List<Meal> findMealsByDay(DayType day) {
+        String dayS = null;
+        if (day == DayType.MONDAY) {
+            dayS = "Mon";
+        } else if (day == DayType.TUESDAY) {
+            dayS = "Tue";
+        } else if (day == DayType.WEDNESDAY) {
+            dayS = "Wed";
+        } else if (day == DayType.THURSDAY) {
+            dayS = "Thu";
+        } else if (day == DayType.FRIDAY) {
+            dayS = "Fri";
+        } else if (day == DayType.SATURDAY) {
+            dayS = "Sat";
+        } else if (day == DayType.SUNDAY) {
+            dayS = "Sun";
+        }
+        List<Meal> found = new ArrayList<>();
+        for (Meal item : savedMeals) {
+            if (item.getDate().toString().contains(dayS)) {
+                found.add(item);
+            }
+        }
+        return found;
     }
 }

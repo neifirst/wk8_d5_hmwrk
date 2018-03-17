@@ -1,5 +1,6 @@
 package db;
 
+import enums.DayType;
 import models.Food;
 import models.Meal;
 import models.User;
@@ -101,5 +102,13 @@ public class DBHelper {
         return result;
     }
 
-
+    public static List<Meal> getMealsByDay(User user, DayType day) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Meal> result = null;
+        Criteria cr = session.createCriteria(Meal.class);
+        cr.add(Restrictions.eq("user", user));
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        result = getList(cr);
+        return result;
+    }
 }

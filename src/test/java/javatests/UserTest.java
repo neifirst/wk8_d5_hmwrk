@@ -82,4 +82,11 @@ public class UserTest {
         user.addMeal(meal);
         assertEquals(1, user.mealCount());
     }
+
+    @Test
+    public void canFindMealsByDay() {
+        user.addMeal(meal);
+        List<Meal> found = user.findMealsByDay(DayType.SATURDAY);
+        assertEquals(1, found.size());
+    }
 }

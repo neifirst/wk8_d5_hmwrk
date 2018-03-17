@@ -79,5 +79,7 @@ public class runner {
 
 //        List<Food> foundFoodsByMeal = DBHelper.getFoodsByMeal(meal1);
         List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
+
+        List<Meal> foundMealsByDay = user1.findMealsByDay(DayType.SATURDAY);
     }
 }
