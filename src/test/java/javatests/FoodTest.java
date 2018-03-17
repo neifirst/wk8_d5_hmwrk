@@ -65,12 +65,12 @@ public class FoodTest {
 
     @Test
     public void canGetPercentValues() {
-        Food newFood = food1.getValuesForAmount(50);
-        assertEquals(376, newFood.getCalories(), 0.01);
-        assertEquals(2.6, newFood.getCarbs(), 0.01);
-        assertEquals(37.9, newFood.getFat(), 0.01);
-        assertEquals(3.95, newFood.getProtein(), 0.01);
-        assertEquals(4.3, newFood.getFibre(), 0.01);
+        Food newFood = food4.getValuesForAmount(50);
+        assertEquals(184, newFood.getCalories(), 0.01);
+        assertEquals(0.9, newFood.getCarbs(), 0.01);
+        assertEquals(15.3, newFood.getFat(), 0.01);
+        assertEquals(21.3, newFood.getProtein(), 0.01);
+        assertEquals(0, newFood.getFibre(), 0.01);
     }
 
     @Test

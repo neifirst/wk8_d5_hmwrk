@@ -56,10 +56,6 @@ public class MealTest {
         meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
     }
 
-//    @Test
-//    public void canGetDate() {
-//        assertEquals(42 , meal.getDate());
-//    }
 
     @Test
     public void canAddIngredientAndCalculate() {

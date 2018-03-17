@@ -28,7 +28,7 @@ public class User {
         this.name = name;
         this.userName = userName;
         this.goals = goals;
-        this.monAmounts = new HashMap<MacroType, Double>();
+        this.monAmounts = new HashMap<>();
         this.savedMeals = savedMeals;
     }
 
