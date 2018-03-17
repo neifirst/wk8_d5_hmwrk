@@ -12,7 +12,7 @@ public class Meal {
     private User user;
     private Date date;
     private Map<Food, Double> ingreds;
-    private List<Food> foods;
+    private List<Food> constituents;
     private double calTotal;
     private double carbsTotal;
     private double fatTotal;
@@ -22,13 +22,13 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(String name, User user, Date date, Map<Food, Double> ingreds, List<Food> foods) {
+    public Meal(String name, User user, Date date, Map<Food, Double> ingreds, List<Food> constituents) {
         this.id = id;
         this.name = name;
         this.user = user;
         this.date = new Date();
         this.ingreds = ingreds;
-        this.foods = foods;
+        this.constituents = constituents;
         this.calTotal = 0;
         this.carbsTotal = 0;
         this.fatTotal = 0;
@@ -75,36 +75,35 @@ public class Meal {
         this.date = date;
     }
 
-    @ManyToMany
-    @JoinTable(name = "meal_food",
-            joinColumns = {@JoinColumn(name = "meal_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "food_id", nullable = false, updatable = false)})
-    public List<Food> getFoods() {
-        return foods;
+    @Transient
+    public List<Food> getConstituents() {
+        return constituents;
     }
 
-    public void setFoods(List<Food> foods) {
-        this.foods = foods;
+    public void setFoods(List<Food> constituents) {
+        this.constituents = constituents;
     }
 
-    @Column(name="ingreds")
+    @Transient
     public Map<Food, Double> getIngreds() {
         return ingreds;
     }
+
 
     public void setIngreds(Map<Food, Double> ingreds) {
         this.ingreds = ingreds;
     }
 
-    public int getFoodsCount() {
-        return foods.size();
+    public int constituentsCount() {
+        return constituents.size();
     }
 
-    public void addFood(Food food) {
-        foods.add(food);
+
+    public void addConstituent(Food constituent) {
+        constituents.add(constituent);
     }
 
-    public int getIngredCount() {
+    public int ingredCount() {
         return ingreds.size();
     }
 
@@ -128,8 +127,8 @@ public class Meal {
            proteinTotal += proteinResult;
            fibreTotal += fibreResult;
 
-           Food food = new Food(key.getName(), calResult, carbResult, fatResult, proteinResult, fibreResult);
-           this.addFood(food);
+           Food constituent = new Food(key.getName(), calResult, carbResult, fatResult, proteinResult, fibreResult);
+           this.addConstituent(constituent);
         }
     }
 

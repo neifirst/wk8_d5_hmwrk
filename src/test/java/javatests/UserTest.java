@@ -22,7 +22,7 @@ public class UserTest {
     Food food3;
     Food food4;
     Food food5;
-    List<Food> foods;
+    List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
     Map<MacroType, Double> monAmounts;
@@ -40,14 +40,14 @@ public class UserTest {
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
         food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
 
-        foods = new ArrayList<>();
+        constituents = new ArrayList<>();
         ingreds = new HashMap<>();
 
         ingreds.put(food1, 140.0);
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
-        meal = new Meal("Scrambled Eggs", user, date, ingreds, foods);
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
 
         savedMeals = new ArrayList<>();
 

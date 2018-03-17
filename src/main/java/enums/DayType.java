@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum DayType {
 
     MONDAY,
@@ -8,5 +9,7 @@ public enum DayType {
     THURSDAY,
     FRIDAY,
     SATURDAY,
-    SUNDAY
+    SUNDAY;
+
+
 }

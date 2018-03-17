@@ -21,7 +21,7 @@ public class MealTest {
     Food food2;
     Food food3;
     Food food4;
-    List<Food> foods;
+    List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
     Map<MacroType, Double> monAmounts;
@@ -38,7 +38,7 @@ public class MealTest {
         food3 = new Food("Double cream", 467, 1.6, 50.5, 1.5, 0);
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
 
-        foods = new ArrayList<Food>();
+        constituents = new ArrayList<Food>();
         ingreds = new HashMap<Food, Double>();
 
         ingreds.put(food1, 140.0);
@@ -53,7 +53,7 @@ public class MealTest {
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
 
 
-        meal = new Meal("Scrambled Eggs", user, date, ingreds, foods);
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
     }
 
 //    @Test
@@ -64,13 +64,8 @@ public class MealTest {
     @Test
     public void canAddIngredientAndCalculate() {
         meal.addIngred(food4, 75.0);
-        assertEquals(4, meal.getIngredCount());
+        assertEquals(4, meal.ingredCount());
     }
 
-    @Test
-    public void canAddFood() {
-        meal.getCalculatedIngred();
-        assertEquals(3, meal.getFoodsCount());
-    }
 
 }

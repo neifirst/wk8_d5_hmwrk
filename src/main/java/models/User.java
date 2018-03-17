@@ -60,6 +60,7 @@ public class User {
         this.userName = userName;
     }
 
+    @Transient
     public Map<DayType, Map<MacroType, Double>> getGoals() {
         return goals;
     }
@@ -74,6 +75,7 @@ public class User {
         monAmounts.put(macro, amount);
     }
 
+    @Transient
     public Map<MacroType, Double> getMonAmounts() {
         return monAmounts;
     }

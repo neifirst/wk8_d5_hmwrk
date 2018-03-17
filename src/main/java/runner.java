@@ -25,24 +25,38 @@ public class runner {
         Food food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
         DBHelper.save(food5);
 
-        List<Food> foods = new ArrayList<>();
+        List<Food> constituents = new ArrayList<>();
         Map<Food, Double> ingreds = new HashMap<>();
 
         ingreds.put(food1, 140.0);
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
+
+
         List<Meal> savedMeals = new ArrayList<>();
 
         Map<DayType, Map<MacroType, Double>> goals = new HashMap<>();
         Map<MacroType, Double> monAmounts = new HashMap<>();
 
+        monAmounts.put(MacroType.CAL, 1500.0);
+        monAmounts.put(MacroType.CARBS, 15.0);
+        monAmounts.put(MacroType.FAT, 140.0);
+        monAmounts.put(MacroType.PROTEIN, 50.0);
+        monAmounts.put(MacroType.FIBRE, 5.0);
+
+        goals.put(DayType.MONDAY, monAmounts);
+
 
         User user1 = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
         DBHelper.save(user1);
 
-        Meal meal1 = new Meal("Scrambled Eggs", user1, date, ingreds, foods);
+        Meal meal1 = new Meal("Scrambled Eggs", user1, date, ingreds, constituents);
         DBHelper.save(meal1);
+
+        meal1.getCalculatedIngred();
+        user1.addMeal(meal1);
+        user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
 
         List<Food> allFoods = DBHelper.getAll(Food.class);
     }
