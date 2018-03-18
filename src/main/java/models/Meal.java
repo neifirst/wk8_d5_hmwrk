@@ -96,13 +96,13 @@ public class Meal {
         this.ingreds = ingreds;
     }
 
+
     @ManyToMany
     @JoinTable(name="meal_food",
             joinColumns = {@JoinColumn(name="meal_id", nullable = false, updatable = false)},
             inverseJoinColumns = {@JoinColumn(name="food_id", nullable = false, updatable = false)}
     )
     public Set<Food> getFoods() {
-        foods = ingreds.keySet();
         return foods;
     }
 
