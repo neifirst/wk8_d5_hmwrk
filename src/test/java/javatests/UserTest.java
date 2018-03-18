@@ -17,7 +17,7 @@ public class UserTest {
 
     User user;
     Meal meal;
-    Date date;
+    GregorianCalendar date;
     Food food1;
     Food food2;
     Food food3;
@@ -33,7 +33,7 @@ public class UserTest {
     public void setUp() throws Exception {
 
 
-        date = new Date();
+        date = new GregorianCalendar();
 
         food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         food2 = new Food("Mayonnaise", 720, 1.3, 79, 1.1, 0);
@@ -45,7 +45,7 @@ public class UserTest {
 
         ingreds = new HashMap<>();
 
-        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
+        meal = new Meal("Scrambled Eggs", user, date , ingreds, constituents);
 
         savedMeals = new ArrayList<>();
 

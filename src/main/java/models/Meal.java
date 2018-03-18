@@ -10,8 +10,9 @@ public class Meal {
     private int id;
     private String name;
     private User user;
-    private Date date;
+    private GregorianCalendar date;
     private Map<Food, Double> ingreds;
+    private Set<Food> foods;
     private List<Food> constituents;
     private double calTotal;
     private double carbsTotal;
@@ -22,12 +23,13 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(String name, User user, Date date, Map<Food, Double> ingreds, List<Food> constituents) {
+    public Meal(String name, User user, GregorianCalendar date, Map<Food, Double> ingreds, List<Food> constituents) {
         this.id = id;
         this.name = name;
         this.user = user;
-        this.date = new Date();
+        this.date = new GregorianCalendar();
         this.ingreds = ingreds;
+        this.foods = new HashSet<>();
         this.constituents = constituents;
         this.calTotal = 0;
         this.carbsTotal = 0;
@@ -67,11 +69,11 @@ public class Meal {
     }
 
     @Column(name="date")
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 
@@ -80,7 +82,7 @@ public class Meal {
         return constituents;
     }
 
-    public void setFoods(List<Food> constituents) {
+    public void setConstituents(List<Food> constituents) {
         this.constituents = constituents;
     }
 
@@ -92,6 +94,26 @@ public class Meal {
 
     public void setIngreds(Map<Food, Double> ingreds) {
         this.ingreds = ingreds;
+    }
+
+    @ManyToMany
+    @JoinTable(name="meal_food",
+            joinColumns = {@JoinColumn(name="meal_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="food_id", nullable = false, updatable = false)}
+    )
+    public Set<Food> getFoods() {
+        foods = ingreds.keySet();
+        return foods;
+    }
+
+    public void setFoods(Set<Food> foods) {
+        this.foods = foods;
+    }
+
+    public void populateFoods() {
+        for (Food food : ingreds.keySet()) {
+            foods.add(food);
+        }
     }
 
     public int constituentsCount() {

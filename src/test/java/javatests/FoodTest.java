@@ -17,7 +17,7 @@ public class FoodTest {
 
     Meal meal;
     User user;
-    Date date;
+    GregorianCalendar date;
     Food food1;
     Food food2;
     Food food3;
@@ -33,7 +33,7 @@ public class FoodTest {
     @Before
     public void setUp() throws Exception {
 
-        date = new Date();
+        date = new GregorianCalendar();
 
 
         food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);

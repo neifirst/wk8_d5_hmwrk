@@ -12,7 +12,7 @@ public class runner {
 
     public static void main(String[] args) {
 
-        Date date = new Date();
+        GregorianCalendar date = new GregorianCalendar();
 
         Food food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         DBHelper.save(food1);
@@ -35,6 +35,7 @@ public class runner {
         ingreds.put(food2, 15.0);
         ingreds.put(food3, 30.0);
 
+
         List<Meal> savedMeals = new ArrayList<>();
 
 
@@ -49,6 +50,7 @@ public class runner {
 
         Meal meal1 = new Meal("Scrambled Eggs", user1, date, ingreds, constituents);
         meal1.getCalculatedIngred();
+        meal1.populateFoods();
         DBHelper.save(meal1);
 
 
@@ -64,9 +66,8 @@ public class runner {
 
 
         DBHelper.delete(food5);
-        DBHelper.delete(food2);
 
-        user1.setUserName("funky_shi_shi");
+        user1.setUserName("Oh_my_god_thats_the_funky_shi");
         DBHelper.save(user1);
 
         List<Food> allFoods = DBHelper.getAll(Food.class);
@@ -77,10 +78,10 @@ public class runner {
         Meal foundMealById = DBHelper.find(Meal.class, meal1.getId());
         User foundUserById = DBHelper.find(User.class, user1.getId());
 
-//        List<Food> foundFoodsByMeal = DBHelper.getFoodsByMeal(meal1); <--- MANY TO MANY HASH PROBLEM
 
         List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
         List<Meal> foundMealsByDay = user1.findMealsByDay(DayType.SUNDAY);
+
 
 
     }

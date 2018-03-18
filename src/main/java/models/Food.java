@@ -96,7 +96,7 @@ public class Food {
         this.fibre = fibre;
     }
 
-    @Transient
+    @ManyToMany(mappedBy = "foods", fetch = FetchType.EAGER)
     public List<Meal> getMeals() {
         return meals;
     }

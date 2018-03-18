@@ -22,7 +22,7 @@ public class UserTestDb {
     private Food food5;
     private Meal meal;
     private User user;
-    private Date date;
+    private GregorianCalendar date;
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
@@ -33,7 +33,7 @@ public class UserTestDb {
     @Before
     public void setUp() throws Exception {
 
-        date = new Date();
+        date = new GregorianCalendar();
 
         food1 = new Food("Duck eggs", 233, 0, 16.9, 20.4, 0);
         DBHelper.save(food1);
