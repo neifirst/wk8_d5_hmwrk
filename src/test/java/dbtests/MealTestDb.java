@@ -61,6 +61,8 @@ public class MealTestDb {
         DBHelper.save(user);
 
         meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
+        meal.getCalculatedIngred();
+        meal.populateFoods();
         DBHelper.save(meal);
 
     }
