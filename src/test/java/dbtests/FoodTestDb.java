@@ -36,6 +36,10 @@ public class FoodTestDb {
         assertEquals("Helmanns Mayo", found.getName());
     }
 
-
-
+    @Test
+    public void canDelete() {
+        DBHelper.delete(food1);
+        List<Food> results = DBHelper.getAll(Food.class);
+        assertEquals(0, results.size());
+    }
 }

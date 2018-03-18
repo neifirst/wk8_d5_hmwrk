@@ -55,19 +55,7 @@ public class MealTestDb {
 
         savedMeals = new ArrayList<>();
 
-
         goals = new HashMap<>();
-        monAmounts = new HashMap<>();
-
-        monAmounts.put(MacroType.CAL, 1500.0);
-        monAmounts.put(MacroType.CARBS, 15.0);
-        monAmounts.put(MacroType.FAT, 140.0);
-        monAmounts.put(MacroType.PROTEIN, 50.0);
-        monAmounts.put(MacroType.FIBRE, 5.0);
-
-        goals.put(DayType.MONDAY, monAmounts);
-
-
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
         DBHelper.save(user);
@@ -91,6 +79,13 @@ public class MealTestDb {
         DBHelper.save(found);
         found = DBHelper.find(Meal.class, meal.getId());
         assertEquals("Scrambled Eggies", found.getName());
+    }
+
+    @Test
+    public void canDelete() {
+        DBHelper.delete(meal);
+        List<Meal> results = DBHelper.getAll(Meal.class);
+        assertEquals(0, results.size());
     }
 
 }

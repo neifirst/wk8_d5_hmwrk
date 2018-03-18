@@ -29,7 +29,6 @@ public class runner {
 
 
 
-
         List<Food> constituents = new ArrayList<>();
         Map<Food, Double> ingreds = new HashMap<>();
 
@@ -39,15 +38,12 @@ public class runner {
 
 
         List<Meal> savedMeals = new ArrayList<>();
-
-
         Map<DayType, Map<MacroType, Double>> goals = new HashMap<>();
 
 
 
-
-
         User user1 = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
+        user1.populateStartingGoals();
         DBHelper.save(user1);
 
         Meal meal1 = new Meal("Scrambled Eggs", user1, date, ingreds, constituents);
@@ -57,13 +53,11 @@ public class runner {
 
 
 
-        user1.populateStartingGoals();
-        DBHelper.save(user1);
         user1.addMeal(meal1);
         DBHelper.save(user1);
+
         user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
         DBHelper.save(user1);
-
 
 
 
@@ -79,7 +73,6 @@ public class runner {
         Food foundFoodById = DBHelper.find(Food.class, food3.getId());
         Meal foundMealById = DBHelper.find(Meal.class, meal1.getId());
         User foundUserById = DBHelper.find(User.class, user1.getId());
-
 
         List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
         List<Meal> foundMealsByDate = user1.findMealsByDate(DateType.EIGTHTEENTH, MonthType.MAR);

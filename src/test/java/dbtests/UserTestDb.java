@@ -26,7 +26,6 @@ public class UserTestDb {
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
-    Map<MacroType, Double> monAmounts;
     List<Meal> savedMeals;
 
 
@@ -47,33 +46,19 @@ public class UserTestDb {
         DBHelper.save(food5);
 
         constituents = new ArrayList<>();
+
         ingreds = new HashMap<>();
 
-        ingreds.put(food1, 140.0);
-        ingreds.put(food2, 15.0);
-        ingreds.put(food3, 30.0);
+        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
+        DBHelper.save(meal);
 
         savedMeals = new ArrayList<>();
 
-
         goals = new HashMap<>();
-        monAmounts = new HashMap<>();
-
-        monAmounts.put(MacroType.CAL, 1500.0);
-        monAmounts.put(MacroType.CARBS, 15.0);
-        monAmounts.put(MacroType.FAT, 140.0);
-        monAmounts.put(MacroType.PROTEIN, 50.0);
-        monAmounts.put(MacroType.FIBRE, 5.0);
-
-        goals.put(DayType.MONDAY, monAmounts);
-
-
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
         DBHelper.save(user);
 
-        meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
-        DBHelper.save(meal);
 
     }
 
@@ -90,6 +75,13 @@ public class UserTestDb {
         DBHelper.save(found);
         found = DBHelper.find(User.class, user.getId());
         assertEquals("Actual Cannibal Shia LaBeouf", found.getName());
+    }
+
+    @Test
+    public void canDelete() {
+        DBHelper.delete(user);
+        List<User> results = DBHelper.getAll(User.class);
+        assertEquals(0, results.size());
     }
 
 }
