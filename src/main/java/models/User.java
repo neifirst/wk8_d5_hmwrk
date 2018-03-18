@@ -1,7 +1,9 @@
 package models;
 
+import enums.DateType;
 import enums.DayType;
 import enums.MacroType;
+import enums.MonthType;
 
 import javax.persistence.*;
 import java.util.*;
@@ -99,10 +101,11 @@ public class User {
     }
 
 
-    public List<Meal> findMealsByDay(DayType day) {
+    public List<Meal> findMealsByDate(DateType date, MonthType month) {
         List<Meal> found = new ArrayList<>();
         for (Meal item : savedMeals) {
-            if (item.getDate().get(GregorianCalendar.DAY_OF_WEEK) == day.getTag()) {
+            if (item.getDate().get(GregorianCalendar.DAY_OF_MONTH) == date.getTag() &&
+                    item.getDate().get(GregorianCalendar.MONTH) == month.getTag()) {
                 found.add(item);
             }
         }

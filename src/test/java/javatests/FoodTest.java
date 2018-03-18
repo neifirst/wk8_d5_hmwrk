@@ -1,6 +1,5 @@
 package javatests;
 
-import db.DBHelper;
 import enums.DayType;
 import enums.MacroType;
 import models.Food;

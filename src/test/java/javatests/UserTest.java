@@ -1,8 +1,9 @@
 package javatests;
 
-import db.DBHelper;
+import enums.DateType;
 import enums.DayType;
 import enums.MacroType;
+import enums.MonthType;
 import models.Food;
 import models.Meal;
 import models.User;
@@ -64,9 +65,9 @@ public class UserTest {
     }
 
     @Test
-    public void canFindMealsByDay() {
+    public void canFindMealsByDate() {
         user.addMeal(meal);
-        List<Meal> found = user.findMealsByDay(DayType.SUNDAY);
+        List<Meal> found = user.findMealsByDate(DateType.EIGTHTEENTH, MonthType.MAR);
         assertEquals(1, found.size());
     }
 

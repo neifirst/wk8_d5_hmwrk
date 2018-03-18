@@ -1,7 +1,5 @@
 package db;
 
-import enums.DayType;
-import models.Food;
 import models.Meal;
 import models.User;
 import org.hibernate.Criteria;
@@ -11,7 +9,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
-import java.util.Set;
 
 public class DBHelper {
 
@@ -103,9 +100,4 @@ public class DBHelper {
         return result;
     }
 
-//    public static Set<Food> getFoodsByMeal(Meal meal) {                   <----- This does not work, because id?
-//        Meal foundMeal = DBHelper.find(Meal.class, meal.getId());
-//        Set<Food> results = foundMeal.getFoods();
-//        return results;
-//    }
 }

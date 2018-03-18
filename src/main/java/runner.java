@@ -1,6 +1,8 @@
 import db.DBHelper;
+import enums.DateType;
 import enums.DayType;
 import enums.MacroType;
+import enums.MonthType;
 import models.Food;
 import models.Meal;
 import models.User;
@@ -80,7 +82,7 @@ public class runner {
 
 
         List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
-        List<Meal> foundMealsByDay = user1.findMealsByDay(DayType.SUNDAY);
+        List<Meal> foundMealsByDate = user1.findMealsByDate(DateType.EIGTHTEENTH, MonthType.MAR);
 
 
 
