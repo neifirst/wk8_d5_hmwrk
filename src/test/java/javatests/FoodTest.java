@@ -1,5 +1,6 @@
 package javatests;
 
+import db.DBHelper;
 import enums.DayType;
 import enums.MacroType;
 import models.Food;
@@ -72,6 +73,7 @@ public class FoodTest {
         assertEquals(21.3, newFood.getProtein(), 0.01);
         assertEquals(0, newFood.getFibre(), 0.01);
     }
+
 
     @Test
     public void canGetMeals() {

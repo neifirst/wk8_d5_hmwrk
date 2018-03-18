@@ -61,6 +61,8 @@ public class MealTest {
     public void canAddIngredientAndCalculate() {
         meal.addIngred(food4, 75.0);
         assertEquals(4, meal.ingredCount());
+        meal.getCalculatedIngred();
+        assertEquals(4, meal.constituentsCount());
     }
 
 

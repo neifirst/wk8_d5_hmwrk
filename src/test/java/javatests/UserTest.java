@@ -26,7 +26,13 @@ public class UserTest {
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
-    Map<MacroType, Double> monAmounts;
+    Map<MacroType, Double> monGoals;
+    Map<MacroType, Double> tueGoals;
+    Map<MacroType, Double> wedGoals;
+    Map<MacroType, Double> thuGoals;
+    Map<MacroType, Double> friGoals;
+    Map<MacroType, Double> satGoals;
+    Map<MacroType, Double> sunGoals;
     List<Meal> savedMeals;
 
 
@@ -53,29 +59,22 @@ public class UserTest {
 
         savedMeals = new ArrayList<>();
 
+
         goals = new HashMap<>();
-        monAmounts = new HashMap<>();
+        monGoals = new HashMap<>();
+        tueGoals = new HashMap<>();
+        wedGoals = new HashMap<>();
+        thuGoals = new HashMap<>();
+        friGoals = new HashMap<>();
+        satGoals = new HashMap<>();
+        sunGoals = new HashMap<>();
 
-        monAmounts.put(MacroType.CAL, 1500.0);
-        monAmounts.put(MacroType.CARBS, 15.0);
-        monAmounts.put(MacroType.FAT, 140.0);
-        monAmounts.put(MacroType.PROTEIN, 50.0);
-        monAmounts.put(MacroType.FIBRE, 5.0);
-
-        goals.put(DayType.MONDAY, monAmounts);
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
 
     }
 
 
-    @Test
-    public void canUpdateAGoal() {
-        user.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
-        Map<MacroType, Double> map = goals.get(DayType.MONDAY);
-        Double result = map.get(MacroType.CAL);
-        assertEquals(1600.0, result, 0.01);
-    }
 
     @Test
     public void canAddMeal() {
@@ -86,7 +85,28 @@ public class UserTest {
     @Test
     public void canFindMealsByDay() {
         user.addMeal(meal);
-        List<Meal> found = user.findMealsByDay(DayType.SATURDAY);
+        List<Meal> found = user.findMealsByDay(DayType.SUNDAY);
         assertEquals(1, found.size());
     }
+
+    @Test
+    public void canPopulateStartingGoals() {
+        user.populateStartingGoals();
+        assertEquals(7, user.getGoals().size());
+        Map<MacroType, Double> map = goals.get(DayType.MONDAY);
+        Double result = map.get(MacroType.CAL);
+        assertEquals(1500.0, result, 0.01);
+
+    }
+
+        @Test
+    public void canUpdateAGoal() {
+        user.populateStartingGoals();
+        user.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
+        Map<MacroType, Double> map = goals.get(DayType.MONDAY);
+        Double result = map.get(MacroType.CAL);
+        assertEquals(1600.0, result, 0.01);
+    }
+
+
 }

@@ -17,7 +17,13 @@ public class User {
     private String name;
     private String userName;
     private Map<DayType, Map<MacroType, Double>> goals;
-    private Map<MacroType, Double> monAmounts;
+    private Map<MacroType, Double> monGoals;
+    private Map<MacroType, Double> tueGoals;
+    private Map<MacroType, Double> wedGoals;
+    private Map<MacroType, Double> thuGoals;
+    private Map<MacroType, Double> friGoals;
+    private Map<MacroType, Double> satGoals;
+    private Map<MacroType, Double> sunGoals;
     private List<Meal> savedMeals;
 
     public User() {
@@ -28,8 +34,15 @@ public class User {
         this.name = name;
         this.userName = userName;
         this.goals = goals;
-        this.monAmounts = new HashMap<>();
+        this.monGoals = new HashMap<>();
+        this.tueGoals = new HashMap<>();
+        this.wedGoals = new HashMap<>();
+        this.thuGoals = new HashMap<>();
+        this.friGoals = new HashMap<>();
+        this.satGoals = new HashMap<>();
+        this.sunGoals = new HashMap<>();
         this.savedMeals = savedMeals;
+        populateStartingGoals();
     }
 
     @Id
@@ -70,15 +83,6 @@ public class User {
         Map<MacroType, Double> map = goals.get(day);
         map.put(macro, amount);
 
-    }
-
-    public void setMonAmounts(MacroType macro, Double amount) {
-        monAmounts.put(macro, amount);
-    }
-
-    @Transient
-    public Map<MacroType, Double> getMonAmounts() {
-        return monAmounts;
     }
 
     @OneToMany(mappedBy="user",fetch= FetchType.EAGER)
@@ -123,5 +127,163 @@ public class User {
             }
         }
         return found;
+    }
+
+
+
+
+    public void populateStartingGoals() {
+        Double amount;
+        for (DayType day : DayType.values()) {
+            if (day == DayType.MONDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.monGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.monGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.monGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.monGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.monGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, monGoals);
+
+            } else if (day == DayType.TUESDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.tueGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.tueGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.tueGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.tueGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.tueGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, tueGoals);
+
+            } else if (day == DayType.WEDNESDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.wedGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.wedGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.wedGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.wedGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.wedGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, wedGoals);
+
+            } else if (day == DayType.THURSDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.thuGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.thuGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.thuGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.thuGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.thuGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, thuGoals);
+
+            } else if (day == DayType.FRIDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.friGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.friGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.friGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.friGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.friGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, friGoals);
+
+            } else if (day == DayType.SATURDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.satGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.satGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.satGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.satGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.satGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, satGoals);
+
+            } else if (day == DayType.SUNDAY) {
+                for (MacroType macro : MacroType.values()) {
+                    if (macro == MacroType.CAL) {
+                        amount = 1500.0;
+                        this.sunGoals.put(macro, amount);
+                    }else if (macro == MacroType.CARBS) {
+                        amount = 15.0;
+                        this.sunGoals.put(macro, amount);
+                    }else if (macro == MacroType.FAT) {
+                        amount = 130.0;
+                        this.sunGoals.put(macro, amount);
+                    }else if (macro == MacroType.PROTEIN) {
+                        amount = 50.0;
+                        this.sunGoals.put(macro, amount);
+                    }else if (macro == MacroType.FIBRE) {
+                        amount = 5.0;
+                        this.sunGoals.put(macro, amount);
+                    }
+                }
+                this.goals.put(day, sunGoals);
+            }
+
+        }
+
     }
 }

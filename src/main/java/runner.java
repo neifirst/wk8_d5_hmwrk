@@ -41,15 +41,13 @@ public class runner {
 
 
         Map<DayType, Map<MacroType, Double>> goals = new HashMap<>();
-        Map<MacroType, Double> monAmounts = new HashMap<>();
-
-        monAmounts.put(MacroType.CAL, 1500.0);
-        monAmounts.put(MacroType.CARBS, 15.0);
-        monAmounts.put(MacroType.FAT, 140.0);
-        monAmounts.put(MacroType.PROTEIN, 50.0);
-        monAmounts.put(MacroType.FIBRE, 5.0);
-
-        goals.put(DayType.MONDAY, monAmounts);
+        Map<MacroType, Double> monGoals = new HashMap<>();
+        Map<MacroType, Double> tueGoals = new HashMap<>();
+        Map<MacroType, Double> wedGoals = new HashMap<>();
+        Map<MacroType, Double> thuGoals = new HashMap<>();
+        Map<MacroType, Double> friGoals = new HashMap<>();
+        Map<MacroType, Double> satGoals = new HashMap<>();
+        Map<MacroType, Double> sunGoals = new HashMap<>();
 
 
 
@@ -63,21 +61,32 @@ public class runner {
 
 
 
-
+        user1.populateStartingGoals();
         user1.addMeal(meal1);
         user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
 
+
+
+
+        DBHelper.delete(food5);
+        DBHelper.delete(food2);
+
+        user1.setUserName("funky_shi_shi");
+        DBHelper.save(user1);
 
         List<Food> allFoods = DBHelper.getAll(Food.class);
         List<Meal> allMeals = DBHelper.getAll(Meal.class);
         List<User> allUsers = DBHelper.getAll(User.class);
 
         Food foundFoodById = DBHelper.find(Food.class, food2.getId());
-        Meal foundFolderById = DBHelper.find(Meal.class, meal1.getId());
-        User foundOwnerById = DBHelper.find(User.class, user1.getId());
+        Meal foundMealById = DBHelper.find(Meal.class, meal1.getId());
+        User foundUserById = DBHelper.find(User.class, user1.getId());
 
-//        List<Food> foundFoodsByMeal = DBHelper.getFoodsByMeal(meal1); <--- MANY TO MANY PROBLEM
+//        List<Food> foundFoodsByMeal = DBHelper.getFoodsByMeal(meal1); <--- MANY TO MANY HASH PROBLEM
+
         List<Meal> foundMealsByUser = DBHelper.getMealsByUser(user1);
-        List<Meal> foundMealsByDay = user1.findMealsByDay(DayType.SATURDAY);
+        List<Meal> foundMealsByDay = user1.findMealsByDay(DayType.SUNDAY);
+
+
     }
 }
