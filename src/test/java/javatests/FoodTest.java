@@ -25,9 +25,8 @@ public class FoodTest {
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
-    Map<MacroType, Double> monAmounts;
     List<Meal> savedMeals;
-    private List<Meal> meals;
+    List<Meal> meals;
 
 
 
@@ -42,20 +41,12 @@ public class FoodTest {
         food3 = new Food("Double cream", 467, 1.6, 50.5, 1.5, 0);
         food4 = new Food("Chedder", 368, 1.8, 30.6, 42.6, 0);
 
-        constituents = new ArrayList<Food>();
-        ingreds = new HashMap<Food, Double>();
-
-        ingreds.put(food1, 140.0);
-        ingreds.put(food2, 15.0);
-        ingreds.put(food3, 30.0);
-
+        constituents = new ArrayList<>();
+        ingreds = new HashMap<>();
         savedMeals = new ArrayList<>();
-
         goals = new HashMap<>();
-        monAmounts = new HashMap<>();
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
-
 
         meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
 

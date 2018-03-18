@@ -24,7 +24,6 @@ public class MealTest {
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
-    Map<MacroType, Double> monAmounts;
     List<Meal> savedMeals;
 
     @Before
@@ -48,10 +47,8 @@ public class MealTest {
         savedMeals = new ArrayList<>();
 
         goals = new HashMap<>();
-        monAmounts = new HashMap<>();
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
-
 
         meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
     }

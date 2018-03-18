@@ -26,13 +26,6 @@ public class UserTest {
     List<Food> constituents;
     Map<Food, Double> ingreds;
     Map<DayType, Map<MacroType, Double>> goals;
-    Map<MacroType, Double> monGoals;
-    Map<MacroType, Double> tueGoals;
-    Map<MacroType, Double> wedGoals;
-    Map<MacroType, Double> thuGoals;
-    Map<MacroType, Double> friGoals;
-    Map<MacroType, Double> satGoals;
-    Map<MacroType, Double> sunGoals;
     List<Meal> savedMeals;
 
 
@@ -49,26 +42,14 @@ public class UserTest {
         food5 = new Food("All the bodies", 2678, 3.6, 363.2, 684, 0);
 
         constituents = new ArrayList<>();
-        ingreds = new HashMap<>();
 
-        ingreds.put(food1, 140.0);
-        ingreds.put(food2, 15.0);
-        ingreds.put(food3, 30.0);
+        ingreds = new HashMap<>();
 
         meal = new Meal("Scrambled Eggs", user, date, ingreds, constituents);
 
         savedMeals = new ArrayList<>();
 
-
         goals = new HashMap<>();
-        monGoals = new HashMap<>();
-        tueGoals = new HashMap<>();
-        wedGoals = new HashMap<>();
-        thuGoals = new HashMap<>();
-        friGoals = new HashMap<>();
-        satGoals = new HashMap<>();
-        sunGoals = new HashMap<>();
-
 
         user = new User("Shia LeBeouf", "ShiCannibal", goals, savedMeals);
 

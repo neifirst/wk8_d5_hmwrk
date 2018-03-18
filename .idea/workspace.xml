@@ -44,8 +44,8 @@
       <file leaf-file-name="MealTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/javatests/MealTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+            <state relative-caret-position="446">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="269" column="38" lean-forward="true" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
+            <state relative-caret-position="151">
+              <caret line="76" column="12" lean-forward="false" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,8 +68,8 @@
       <file leaf-file-name="UserTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/javatests/UserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="111" column="1" lean-forward="true" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+            <state relative-caret-position="-366">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,33 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runner.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="runner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Meal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/Meal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-436">
-              <caret line="86" column="14" lean-forward="false" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FoodTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/javatests/FoodTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="1530">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,11 +126,11 @@
         <option value="$PROJECT_DIR$/src/main/java/models/Food.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Meal.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/DBHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/javatests/FoodTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/javatests/MealTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/User.java" />
+        <option value="$PROJECT_DIR$/src/test/java/javatests/FoodTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/javatests/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/runner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/User.java" />
       </list>
     </option>
   </component>
@@ -342,7 +320,7 @@
       <module name="FoodTracker" />
       <envs />
     </configuration>
-    <configuration name="MealTest.canAddIngredientAndCalculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FoodTest.canGetMeals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="javatests.*" />
@@ -353,8 +331,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="javatests" />
-      <option name="MAIN_CLASS_NAME" value="javatests.MealTest" />
-      <option name="METHOD_NAME" value="canAddIngredientAndCalculate" />
+      <option name="MAIN_CLASS_NAME" value="javatests.FoodTest" />
+      <option name="METHOD_NAME" value="canGetMeals" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -367,7 +345,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FoodTest.canGetPercentValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="javatests.*" />
@@ -378,9 +356,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="javatests" />
-      <option name="MAIN_CLASS_NAME" value="javatests.UserTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="javatests.FoodTest" />
+      <option name="METHOD_NAME" value="canGetPercentValues" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -503,19 +481,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.runner" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MealTest.canAddIngredientAndCalculate" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FoodTest.canGetPercentValues" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FoodTest.canGetMeals" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.UserTest.canPopulateStartingGoals" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserTest.canUpdateAGoal" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserTest.canUpdateAGoal" />
+      <item index="4" class="java.lang.String" itemvalue="Application.runner" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.runner" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserTest.canUpdateAGoal" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserTest.canPopulateStartingGoals" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.UserTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MealTest.canAddIngredientAndCalculate" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserTest.canPopulateStartingGoals" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserTest.canUpdateAGoal" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FoodTest.canGetMeals" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FoodTest.canGetPercentValues" />
       </list>
     </recent_temporary>
   </component>
@@ -536,34 +514,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 41m 15s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    <history-entry file="FoodTest_canGetMeals - 2018.03.18 at 12h 22m 06s.xml">
+      <configuration name="FoodTest.canGetMeals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 41m 53s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    <history-entry file="FoodTest_canGetMeals - 2018.03.18 at 12h 23m 15s.xml">
+      <configuration name="FoodTest.canGetMeals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 44m 29s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    <history-entry file="FoodTest_canGetPercentValues - 2018.03.18 at 12h 22m 02s.xml">
+      <configuration name="FoodTest.canGetPercentValues" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 46m 13s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    <history-entry file="FoodTest_canGetPercentValues - 2018.03.18 at 12h 23m 11s.xml">
+      <configuration name="FoodTest.canGetPercentValues" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 46m 33s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 47m 26s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 54m 43s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 55m 21s.xml">
-      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    <history-entry file="MealTest_canAddIngredientAndCalculate - 2018.03.18 at 12h 21m 14s.xml">
+      <configuration name="MealTest.canAddIngredientAndCalculate" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 11h 56m 15s.xml">
       <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_canUpdateAGoal - 2018.03.18 at 11h 55m 29s.xml">
+    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 12h 24m 29s.xml">
+      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 12h 24m 46s.xml">
+      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_canPopulateStartingGoals - 2018.03.18 at 12h 25m 35s.xml">
+      <configuration name="UserTest.canPopulateStartingGoals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_canUpdateAGoal - 2018.03.18 at 12h 24m 50s.xml">
       <configuration name="UserTest.canUpdateAGoal" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -579,7 +557,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2732769" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2732769" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25997582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -589,7 +567,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37122127" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37122127" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
@@ -635,12 +613,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/runner.java</url>
-          <line>90</line>
+          <line>85</line>
           <properties />
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="54" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -727,49 +705,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/javatests/FoodTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Meal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-436">
-          <caret line="86" column="14" lean-forward="false" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1777">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dbtests/MealTestDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1012">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/javatests/MealTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,20 +745,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Food.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="269" column="38" lean-forward="true" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
+        <state relative-caret-position="-1777">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/javatests/MealTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/javatests/FoodTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Meal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1228">
+          <caret line="86" column="14" lean-forward="false" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/javatests/UserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="111" column="1" lean-forward="true" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+        <state relative-caret-position="-366">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -827,8 +795,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        <state relative-caret-position="1530">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="76" column="12" lean-forward="false" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

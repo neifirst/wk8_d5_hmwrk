@@ -38,16 +38,8 @@ public class runner {
         List<Meal> savedMeals = new ArrayList<>();
 
 
-
-
         Map<DayType, Map<MacroType, Double>> goals = new HashMap<>();
-        Map<MacroType, Double> monGoals = new HashMap<>();
-        Map<MacroType, Double> tueGoals = new HashMap<>();
-        Map<MacroType, Double> wedGoals = new HashMap<>();
-        Map<MacroType, Double> thuGoals = new HashMap<>();
-        Map<MacroType, Double> friGoals = new HashMap<>();
-        Map<MacroType, Double> satGoals = new HashMap<>();
-        Map<MacroType, Double> sunGoals = new HashMap<>();
+
 
 
 
@@ -62,8 +54,11 @@ public class runner {
 
 
         user1.populateStartingGoals();
+        DBHelper.save(user1);
         user1.addMeal(meal1);
+        DBHelper.save(user1);
         user1.setGoals(DayType.MONDAY, MacroType.CAL, 1600.0);
+        DBHelper.save(user1);
 
 
 
@@ -78,7 +73,7 @@ public class runner {
         List<Meal> allMeals = DBHelper.getAll(Meal.class);
         List<User> allUsers = DBHelper.getAll(User.class);
 
-        Food foundFoodById = DBHelper.find(Food.class, food2.getId());
+        Food foundFoodById = DBHelper.find(Food.class, food3.getId());
         Meal foundMealById = DBHelper.find(Meal.class, meal1.getId());
         User foundUserById = DBHelper.find(User.class, user1.getId());
 
